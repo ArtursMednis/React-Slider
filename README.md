@@ -1,7 +1,7 @@
 # React Slider
 
 ## How to use.
-Include "Slider.js" and "Slider.css" in your React project source folder (In example it's added in "./src" folder.)
+Include "Slider.js" and "Slider.css" from "./src" folder to your React project source folder.
 
 ###### Import it in beginning of your code file.
 `import Slider from "./Slider";`
