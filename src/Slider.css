@@ -1,0 +1,21 @@
+
+.slControlBtn{
+  display:block;
+  width:15%;
+  height: 100%;
+  z-index:99;
+  position: absolute;
+  background-color: grey;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.slControlBtn:hover{
+  opacity: 0.8;
+}
+
+.slControlBtn span{
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}

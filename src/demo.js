@@ -1,17 +1,8 @@
-# React Slider
-
-## How to use.
-Include "Slider.js" and "Slider.css" in your React project source folder (In example it's added in "./src" folder.)
-
-###### Import it in beginning of your code file.
-`import Slider from "./Slider";`
+import React from "react";
+import Slider from "./Slider";
 
 
-###### Use as React component in any place where you render component.
-(In example it's used in "./src/demo.js")
-`content` is mandatory property. It must be array of html strings or react components. These will be slides displayed by slider.
-	```
-  class BasicSlider extends React.Component{
+export class BasicSlider extends React.Component{
   render(){
     return (
       <Slider content={[
@@ -30,11 +21,8 @@ Include "Slider.js" and "Slider.css" in your React project source folder (In exa
     )
   }
 };
-  ```
 
-###### Add some optional settings
-```
-class SliderWithOptions extends React.Component{
+export class SliderWithOptions extends React.Component{
   render(){
     return (
       <Slider 
@@ -47,27 +35,16 @@ class SliderWithOptions extends React.Component{
       ]} 
       infinite={true}
       slidesCountOnScreen={2}
-      speed={3000}
+      speed={1200}
       auto={true}
-      pauseTime={2000}
-      showPager={false}
+      pauseTime={3000}
+      showPager={true}
       />
     )
   }
 };
-```
 
-* `infinite` Boolean, false by default. If true, slider will behave like it would be infinite.
-* `slidesCountOnScreen` Number, 1 by default. Use integer greater than 1 if you want multiple parallel slides visible.
-* `speed` Number, 800 by default. Slides transition time in ms.
-* `auto` Boolean, true by default. Slider will automatically change slides.
-* `pauseTime` Number, 5000 by default. Time in ms between slider changes slides if auto property is set true.
-* `showPager`Boolean, false by default. Shows navigation buttons for each slide.
-
-
-###### Slider has method "showSlide(slideNo)". So one can scroll to selected slide by code.
-```
-class SliderScrolToSlide extends React.Component{
+export class SliderScrolToSlide extends React.Component{
   constructor(props){
     super(props);
     this.sliderRef = React.createRef();
@@ -91,5 +68,3 @@ class SliderScrolToSlide extends React.Component{
     )
   }
 };
-```
-
