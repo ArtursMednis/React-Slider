@@ -3,14 +3,15 @@
 ## How to use.
 Include "Slider.js" and "Slider.css" from "./src" folder to your React project source folder.
 
-###### Import it in beginning of your code file.
+#### Import it in beginning of your code file.
 `import Slider from "./Slider";`
 
 
-###### Use as React component in any place where you render component.
+#### Use as React component in any place where you render component.
 (In example it's used in "./src/demo.js")
 `content` is mandatory property. It must be array of html strings or react components. These will be slides displayed by slider.
-	```
+
+```
   class BasicSlider extends React.Component{
   render(){
     return (
@@ -30,9 +31,9 @@ Include "Slider.js" and "Slider.css" from "./src" folder to your React project s
     )
   }
 };
-  ```
+```
 
-###### Add some optional settings
+#### Add some optional settings
 ```
 class SliderWithOptions extends React.Component{
   render(){
@@ -65,7 +66,7 @@ class SliderWithOptions extends React.Component{
 * `showPager`Boolean, false by default. Shows navigation buttons for each slide.
 
 
-###### Slider has method "showSlide(slideNo)". So one can scroll to selected slide by code.
+#### Slider has method "showSlide(slideNo)". So one can scroll to selected slide by code.
 ```
 class SliderScrolToSlide extends React.Component{
   constructor(props){
