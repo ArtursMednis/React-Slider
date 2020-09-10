@@ -13,22 +13,28 @@
   .slControlBtn:hover{
     opacity: 0.8;
   }
+  .slControlBtn span{
+    position: absolute;
+    top: 46%;
+    left: 45%;
+  }
 }
 
 @media (hover: none) {
   .slControlBtn{
     display:block;
-    width:15%;
+    width:10%;
     height: 100%;
     z-index:99;
     position: absolute;
   }
-}
-
-
-
-.slControlBtn span{
-  position: absolute;
-  top: 46%;
-  left: 45%;
+  .slControlBtn span{
+    position: absolute;
+    top: 46%;
+    left: 45%;
+    z-index:99;
+  }
+  .dragDiv{
+    left:10%;
+  }
 }

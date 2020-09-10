@@ -77,24 +77,29 @@ class Slider extends React.Component{
     return(
       <div ref={this.outerDivRef}>
 
-        <div ref={this.dragDivRef} style={{
-          width: this.sliderViewWidth + "px", 
-          overflow: "hidden", 
-          cursor: "grab",
-          position: "relative" }}>
-
-
+        <div style={{
+            width: this.sliderViewWidth + "px", 
+            overflow: "hidden", 
+            position: "relative" }}>
+          
           <div className="slControlBtn" style={{left:0}} onClick={()=>{this.plusSlides(-1)} }> <span> &#10094;</span></div>
           <div className="slControlBtn" style={{right:0}} onClick={()=>{this.plusSlides(1)}}> <span>&#10095;</span></div>
 
-          <div style={{width:this.widthSum+"px"}}>
-            <div ref={this.movableDivRef} style={{transitionProperty: "transform"}}>
-              {this.getInfiniteHandledSlides().map((contentElem)=>this.vrapSliderDiv(contentElem))}
+          <div ref={this.dragDivRef} className="dragDiv"
+          style={{
+            width: this.getMediaAdjustedSliderViewVidth() + "px", 
+            overflow: "hidden", 
+            cursor: "grab",
+            position: "relative" }}>
+
+            <div style={{width:this.widthSum+"px"}}>
+              <div ref={this.movableDivRef} style={{transitionProperty: "transform"}}>
+                {this.getInfiniteHandledSlides().map((contentElem)=>this.vrapSliderDiv(contentElem))}
+              </div>
             </div>
           </div>
-
-
         </div>
+
           <div style={{display:(this.props.showPager) ? "block" : "none", textAlign:"center"}}>
             {this.props.content.map((contetnElem,index)=><button onClick={()=>{this.showSlide(index)}}>{index+1}</button>)}
           </div>
@@ -186,6 +191,9 @@ class Slider extends React.Component{
     var slidesOnScreen = this.getSlidesCountOnScreen();
     this.sliderViewWidth = (this.outerDivRef.current) ? this.outerDivRef.current.offsetWidth : 50;    
     this.slideWidth = (slidesOnScreen > 1) ? this.sliderViewWidth/slidesOnScreen : this.sliderViewWidth;
+    if(this.isMobileDev()){
+      this.slideWidth = Math.round(this.slideWidth*0.8);
+    }
     this.widthSum = this.slideWidth*(this.props.content.length + ((this.props.infinite) ? 2*slidesOnScreen : 0) );
     this.forceUpdate();
   }
@@ -236,7 +244,20 @@ class Slider extends React.Component{
       },pause);
     }
   }
-
+  isMobileDev(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      return true;
+     }
+     return false;
+  }
+  getMediaAdjustedSliderViewVidth(){
+    if(this.isMobileDev()){
+      return Math.round(this.sliderViewWidth*0.8);
+    }
+    else{
+      return this.sliderViewWidth;
+    }
+  }
 }
 
 export default Slider;
