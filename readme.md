@@ -1,24 +1,24 @@
 # React Slider
 
 ## Demo
-You can see demonstration here:
+You can see demonstration here: 
 http://htmlpreview.github.io/?https://github.com/ArtursMednis/React-Slider/blob/master/dist/index.html
 
 ## How to launc this project
 Download all files from the project;
 
 Install dev dependencies:
-'npm i'
+`npm i`
 
 #### Run development
 You can run project development:
-'npm run start'
+`npm run start`
 
 If your browser doesn't load, then open your browser on http://localhost:8080
 
 #### Build release
 To bild release:
-'npm run build'
+`npm run build`
 
 
 ## How to reuse in other projects.
