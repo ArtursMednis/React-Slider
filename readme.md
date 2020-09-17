@@ -31,9 +31,9 @@ Include "Slider.js", "MouseMoveCatcher.js" and "Slider.css" in your React projec
 ###### Use as React component in any place where you render component.
 (In example it's used in "./src/demo.js")
 Slider direct childrens will be slides. Here are example of image slider. 
-	```
 
-  
+
+```
 class ImageSlider extends React.Component {
   render() {
     return (
@@ -87,10 +87,12 @@ class ImageSlider extends React.Component {
     );
   }
 }
-  ```
+```
+
 Note: Here 'img' tag is nested in 'div' tag with 0 line-height; It's due to remove ugly space gap after image.
 
 ###### Add some optional settings
+
 ```
 export class SliderWithOptions extends React.Component {
   render() {
@@ -119,6 +121,7 @@ export class SliderWithOptions extends React.Component {
 
 
 ###### Slider has method "showSlide(slideNo)". So one can scroll to selected slide by code.
+
 ```
 export class SliderScrolToSlide extends React.Component {
   constructor(props) {
