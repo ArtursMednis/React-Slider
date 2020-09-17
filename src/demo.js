@@ -1,70 +1,192 @@
 import React from "react";
 import Slider from "./Slider";
+import imgSlide1 from "./assets/slide1.jpg";
+import imgSlide2 from "./assets/slide2.jpg";
+import imgSlide3 from "./assets/slide3.jpg";
+import imgSlide4 from "./assets/slide4.jpg";
+import imgSlide5 from "./assets/slide5.jpg";
+import imgSlide6 from "./assets/slide6.jpg";
+import imgSlide7 from "./assets/slide7.jpg";
 
-
-export class BasicSlider extends React.Component{
-  render(){
+export class ImageSlider extends React.Component {
+  render() {
     return (
-      <Slider content={[
-        "<h3>0  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        "<h3>First Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        "<h3>Second  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        () => {
-        return (
-          <div>
-            <h4>Third slide as React component</h4>
-            <p> Lorem ipsum dolor sit amet </p>
-          </div>
-        );
-      },
-      ]} />
-    )
+      <Slider auto={false}>
+        <div>
+          <h2> Image slider</h2>
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide1}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide2}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide3}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide4}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide5}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide6}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide7}
+          />
+        </div>
+      </Slider>
+    );
   }
-};
+}
 
-export class SliderWithOptions extends React.Component{
-  render(){
+export class SliderWithOptions extends React.Component {
+  render() {
     return (
-      <Slider 
-      content={[
-        "<h3>0  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        "<h3>First Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        "<h3>Second  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        "<h3>Third  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-        "<h3>4th  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-      ]} 
-      infinite={true}
-      slidesCountOnScreen={2}
-      speed={1200}
-      auto={true}
-      pauseTime={3000}
-      showPager={true}
-      />
-    )
+      <Slider
+        infinite={true}
+        slidesCountOnScreen={2}
+        speed={1200}
+        auto={true}
+        pauseTime={3000}
+        showPager={true}
+      >
+        <div>
+          <p> Image slider</p>{" "}
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide1}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide2}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide3}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide4}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide5}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide6}
+          />
+        </div>
+        <div style={{ lineHeight: "0" }}>
+          <img
+            style={{ width: "100%", margin: 0, padding: 0 }}
+            src={imgSlide7}
+          />
+        </div>
+      </Slider>
+    );
   }
-};
+}
 
-export class SliderScrolToSlide extends React.Component{
-  constructor(props){
+export class SliderScrolToSlide extends React.Component {
+  constructor(props) {
     super(props);
     this.sliderRef = React.createRef();
   }
 
-  render(){
+  render() {
     return (
       <div>
-        <Slider 
-        ref={this.sliderRef}
-        content={[
-          "<h3>0  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-          "<h3>First Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-          "<h3>Second  Slide</h3><p> Lorem ipsum dolor sit amet </p> ",
-          "<h3>Third  Slide</h3><p> Lorem ipsum dolor sit amet </p> "
-        ]} 
-        infinite={true}
-        />
-        <button onClick={()=>{this.sliderRef.current.showSlide(2)}}>Go to slide 2</button>
+        <Slider ref={this.sliderRef} infinite={true}>
+          <div>
+            <p> Image slider</p>{" "}
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide1}
+            />
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide2}
+            />
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide3}
+            />
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide4}
+            />
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide5}
+            />
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide6}
+            />
+          </div>
+          <div style={{ lineHeight: "0" }}>
+            <img
+              style={{ width: "100%", margin: 0, padding: 0 }}
+              src={imgSlide7}
+            />
+          </div>
+        </Slider>
+        <button
+          onClick={() => {
+            this.sliderRef.current.showSlide(2);
+          }}
+        >
+          Go to slide 2
+        </button>
       </div>
-    )
+    );
   }
-};
+}
