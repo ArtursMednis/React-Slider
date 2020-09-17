@@ -1,25 +1,26 @@
 # React Slider
 
 ## Demo
-You can see demonstration here: 
+You can see demonstration here: <br> 
 http://htmlpreview.github.io/?https://github.com/ArtursMednis/React-Slider/blob/master/dist/index.html
 
 ## How to launc this project
 Download all files from the project;
 
-Install dev dependencies:
-`npm i`
+Install dev dependencies: <br>
+  `npm i`
 
 #### Run development
-You can run project development:
-`npm run start`
+You can run project development:<br>
+  `npm run start`
 
 If your browser doesn't load, then open your browser on http://localhost:8080
 
 #### Build release
-To bild release:
-`npm run build`
+To bild release:<br>
+  `npm run build`  <br>
 
+Then all files ar compiled in "./dist" folder.
 
 ## How to reuse in other projects.
 Include "Slider.js", "MouseMoveCatcher.js" and "Slider.css" in your React project source folder (In this project they are in "./src" folder.)
